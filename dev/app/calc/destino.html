@@ -1,0 +1,286 @@
+<div>
+
+  <!-- form deposito en origen-->
+
+  <div name="divForm"> 
+
+    <form><!-- novalidate -->
+
+    <!--
+
+    <h3>Destino</h3>
+
+  -->
+
+<!--
+
+    <br/>*Login<br/>
+
+    <input id="login" name="login" type="text" ng-model="destino.login" auto-focus maxlength="30">
+
+    <br/>
+
+  -->
+
+
+
+  <!--span style="font-weight: bold">País: </span><label name="destino.nombrepais">{{data.nombre_pais2}}</label-->
+
+
+
+  <!--
+
+  TODO.buscar si el usuario ya tiene cuentas registradas anteriormente, para el pais destino
+
+   Si es asi, mostrar en una lista las cuentas, o tener un boton para ver el catalogo de cuentas  
+
+ -->
+
+
+
+ <!--TODO. MEJORA CARACTERISTICA. para siguiente version. habilitar pago en varias cuentas, con una sola transaccion-->
+
+
+
+  <!--TODO. cargar lista de bancos, de bd-->
+
+  <!--todo. LLENAR LISTA de bancos SEGUN EL PAIS destino, BD-->
+
+  <br>
+
+  <!--h5>Elegir Cuenta</h5-->
+
+  <select name="destino.account_destiny_selected" ng-model="destino.account_destiny_selected" auto-focus 
+
+  class="form-control input-sm" ng-change="getDataDestinyAccount()">
+
+  <option value="">Opcion 1: Seleccionar cuenta ya usada</option>
+
+  <option ng-repeat="a in lista_cuentas_destino_user" value="{{a.nroctabank}}">{{a.nombre_titular}} - {{a.nombre_banco}} {{a.nroctabank}}</option>
+
+  <!--TODO. idea: aqui agregar opcion para agregar cuenta, y alli se mostrara los inputs del formulario cuenta destino
+    idea: al agregar los datos de la cuenta, y darle guardar, se agrega ese item a la lista de cuentas a seleccionar: -->
+
+</select>
+
+  <br>
+  
+  <!--TODO. condicionar que se muestre esta etiqueta solo cuando en el select list de cuentas guardadas no hay ninguna cuenta seleccionada-->
+
+  <h5 ng-if="true">Opción 2: Agregar Cuenta Nueva</h5>
+
+  <select name="bancosdestino" ng-model="destino.cod_banco" 
+
+  class="form-control input-sm">
+
+  <option value="">- Selecciona el Banco -</option>
+
+  <option ng-repeat="a in lista_bancos" value="{{a.codigo}}">{{a.nombre}}</option>
+
+</select>
+
+
+
+
+
+  <!--TODO. Posiblemente. hacer select con  lista de tipos de cuenta-->
+
+  <br/>
+
+  <select  name="destino.tipo_cta" data-ng-model="destino.tipo_cta" class="form-control input-sm">
+
+    <option value = "">- Tipo de cuenta -</option>
+
+    <option value = "C">Corriente</option>
+
+    <option value = "A">Ahorros</option>
+
+    <option value = "V">Virtual</option>
+
+    <option value = "O">Otro Tipo</option>
+
+    <!--
+
+    <option value = "N">Nómina</option>
+
+  -->
+
+  </select>
+
+  <br/>
+
+
+
+  <input name="destino.nrocta" type="text" ng-model="destino.nrocta" placeholder="Número de Cuenta" maxlength="20"
+
+  class="form-control input-sm" required>
+
+  <br/>
+
+
+
+  <input name="destino.nombretitular" type="text" ng-model="destino.nombretitular" maxlength="100" placeholder="Nombre del Titular" class="form-control input-sm" required>
+
+  <br/>
+
+  <input name="destino.doctitular" type="text" ng-model="destino.doctitular" maxlength="12" placeholder="Documento del Titular" 
+
+  class="form-control input-sm" required title="Documento del Titular (Cédula/Pasaporte/RIF/RUC)"
+
+  ng-required="destino.ind_pagomovil == true">
+
+  <br/>
+
+
+  <!--span>Nro de Teléfono</span><br/-->
+
+  <input name="destino.telefono" type="text" ng-model="destino.telefono" maxlength="20" placeholder="Teléfono del Titular" 
+
+  ng-value=""
+
+  class="form-control input-sm" ng-required="destino.ind_pagomovil == true">
+  <!--si es pago movil en Vzla, se requiere: nro de telefono y nro de documento-->
+
+  <br/>
+
+  
+<!--label for="ind_pagomovil"> Pago móvil</label><br-->
+  <span><input name="ind_pagomovil" type="checkbox" ng-model="destino.ind_pagomovil"
+    class="form-control input-sm"  title="El envío se hará a través de Pago Móvil">Pago móvil</span>
+    <span ng-show="destino.ind_pagomovil">(SI)</span>
+    <span ng-show="!destino.ind_pagomovil">(NO)</span>
+
+  <br/>
+
+  <!--div class="form-check form-switch">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Pago móvil</label>
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+  </div>
+  <br/-->
+
+  <!--div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Escriba el email del titular"
+    title="Nunca compartiremos tu email.">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div-->
+
+<br>
+  <input type="email" name="destino.email" ng-model="destino.email" placeholder="Email del Titular"
+
+  maxlength="100"
+
+  class="form-control input-sm">
+
+  <br/>
+
+
+  <textarea name="observ" ng-model="destino.observ" cols="50" rows="3" placeholder="Algún comentario adicional"
+
+  maxlength="255"
+
+  class="form-control input-sm">
+
+</textarea>
+
+
+
+</form>
+
+
+
+<div style="visibility: hidden;">
+
+  <input name="id" type="hidden" ng-model="destino.id">
+
+  <span name="user_id" >user id:{{destino.id}}</span>
+
+</div>
+
+
+
+</div>
+
+
+
+<div name="divMsjNoRegistro" ng-show="showErrorNotFound" class="error-element animate-show-hide">
+
+  <p>{{msg}}</p>
+
+</div>
+
+
+
+<div name="divMensajeExito" ng-show="mostrarExito" class="exito-element animate-show-hide">
+
+  <p>{{msg}}</p>
+
+</div>
+
+
+
+<!--TODO. pasar a archivo principal app/index.html-->
+
+<div name="divMensajeError" ng-show="showError == true" class="error-element animate-show-hide">
+
+  <p>Message Operation: {{msg}}</p>
+
+
+
+  <!--debug. TODO. solo mostrar estos datos si el nivel de depuracion de la app es DEBUG-ALL. colocarlo dentro de otro div-->
+
+  <p>StatusCode: {{statusval}}</p>
+
+  <p>Status: {{statustext}}</p>
+
+  <p>Response Headers: {{headers}}</p>
+
+</div>
+
+
+
+
+
+
+
+<!--debug
+
+  <p>(debug) user => {{ user }}</p>
+
+  <p>(debug) paises => {{ lista_paises }}</p>
+
+  <p>(debug) ciudades => {{ lista_ciudades }}</p>
+
+-->
+
+<!--
+
+  <p>master = {{ master }}</p>
+
+-->
+
+
+
+  <!--pruebas
+
+    <p>resumen: {{ $scope.resumen}}</p>
+
+    <input name="login" type="text" ng-model="destino.login" auto-focus>
+
+    <p>saludo: {{ saludo}}</p>
+
+<p>login: {{ paramLogin}}</p>
+
+<p>showError: {{ showError}}</p>
+
+<p>showForm: {{ showForm}}</p>
+
+  $scope.showErrorNotFound = false;
+
+-->
+
+
+
+
+
+</div>

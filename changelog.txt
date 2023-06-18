@@ -1,0 +1,11 @@
+commits
+2019-10-02
+primer commit a github.
+
+2020-04-10
+retomando proyecto en github
+
+2023-02-02
+descargo proyecto de github en visual studio, para trackear con git unicamente.
+ya no mas subida y bajada de archivos individuales
+

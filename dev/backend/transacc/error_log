@@ -1,0 +1,25 @@
+[16-Jul-2021 14:54:42 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/naguarab/public_html/backend/app/transacc/resumen_get.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/naguarab/public_html/backend/app/transacc/resumen_get.php on line 50
+[24-Jul-2021 21:58:11 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/naguarab/public_html/backend/app/transacc/resumen_get.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/naguarab/public_html/backend/app/transacc/resumen_get.php on line 50
+[06-Aug-2021 14:34:30 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/naguarab/public_html/backend/app/transacc/resumen_get.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/naguarab/public_html/backend/app/transacc/resumen_get.php on line 50
+[06-Aug-2021 14:34:30 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/naguarab/public_html/backend/app/transacc/destino_transacc.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/naguarab/public_html/backend/app/transacc/destino_transacc.php on line 36
+[21-Aug-2021 22:33:04 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/naguarab/public_html/backend/app/transacc/resumen_get.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/naguarab/public_html/backend/app/transacc/resumen_get.php on line 50
+[15-Oct-2021 13:25:45 America/New_York] PHP Notice:  Undefined index: date_end in /home/naguarab/public_html/backend/app/transacc/resumen_get.php on line 72
+[25-Oct-2021 16:55:54 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/naguarab/public_html/backend/app/transacc/resumen_get.php:50
+Stack trace:
+#0 {main}
+  thrown in /home/naguarab/public_html/backend/app/transacc/resumen_get.php on line 50
